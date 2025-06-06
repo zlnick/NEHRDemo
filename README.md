@@ -1,2 +1,2 @@
-# NEHRDemo
-Demo Codes for NEHR QA flow
+# PatientInfoSE
+基于IRIS，利用大模型和FHIR构造的患者信息搜索引擎Demo

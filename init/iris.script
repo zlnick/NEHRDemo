@@ -1,0 +1,19 @@
+zn "%SYS"
+// Unexpire passwords and set up passwordless mode to simplify dev use.
+do ##class(Security.Users).UnExpireUserPasswords("*")
+
+
+// Install Demo namespace
+set demons = "Demo"
+zn "HSLIB"
+Do ##class(HS.Util.Installer.Foundation).Install(demons)
+
+//zn "USER"
+// this should be the place for individual application code.
+//do $System.OBJ.LoadDir("/irisdev/app/src/","ck",,1)
+
+//zpm "load /irisdev/app -v":1:1
+halt
+EOF
+
+exit 0
