@@ -1,0 +1,14 @@
+<AddPatientServiceResult>
+    <controlHeader>
+        <srcInstitution>a</srcInstitution>
+        <srcApplication>b</srcApplication>
+        <msgID>111</msgID>
+        <msgSequenceID>1</msgSequenceID>
+        <msgDateTime>11111</msgDateTime>
+        <msgType>1</msgType>
+    </controlHeader>
+    <resultStatus>
+        <statusCode>111</statusCode>
+        <statusDescription>OK</statusDescription>
+    </resultStatus>
+</AddPatientServiceResult>

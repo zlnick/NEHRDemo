@@ -1,14 +1,17 @@
 Class NEHRDemo.Messages.AddPatientRequest Extends Ens.Request
 {
 
-Property patient As HS.SDA3.Patient;
+Property putEvent As NEHRDemo.Entity.PutEvent;
 
 Storage Default
 {
 <Data name="AddPatientRequestDefaultData">
 <Subscript>"AddPatientRequest"</Subscript>
 <Value name="1">
-<Value>patient</Value>
+<Value>payload</Value>
+</Value>
+<Value name="2">
+<Value>putEvent</Value>
 </Value>
 </Data>
 <DefaultData>AddPatientRequestDefaultData</DefaultData>
