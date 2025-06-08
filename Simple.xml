@@ -12,10 +12,9 @@
             <!--Zero
             or more repetitions:-->
             <Identification>
-                <id>?</id>
-                <MRNNumber>?</MRNNumber>
-                <type>?</type>
-                <patientMergeType>?</patientMergeType>
+                <id>T2396181J</id>
+                <MRNNumber>cc49389absdb48567</MRNNumber>
+                <type>NRIC</type>
             </Identification>
             <Identification>
                 <id>49389743748567</id>

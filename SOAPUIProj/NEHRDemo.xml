@@ -5,7 +5,7 @@
       <tem:HandleEvent>
          <tem:payload><![CDATA[
          	
-         	<AddPatientServiceResult>
+         	<putEvent>
     <controlHeader>
         <srcInstitution>a</srcInstitution>
         <srcApplication>b</srcApplication>
@@ -18,7 +18,7 @@
         <statusCode>111</statusCode>
         <statusDescription>OK</statusDescription>
     </resultStatus>
-</AddPatientServiceResult>
+</putEvent>
          	
          ]]></tem:payload>
       </tem:HandleEvent>
