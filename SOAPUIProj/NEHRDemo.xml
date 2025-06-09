@@ -5,7 +5,7 @@
       <tem:HandleEvent>
          <tem:payload><![CDATA[
          	
-         	<putEvent>
+         <putEvent>
     <controlHeader>
         <srcInstitution>a</srcInstitution>
         <srcApplication>b</srcApplication>
@@ -14,10 +14,109 @@
         <msgDateTime>11111</msgDateTime>
         <msgType>1</msgType>
     </controlHeader>
-    <resultStatus>
-        <statusCode>111</statusCode>
-        <statusDescription>OK</statusDescription>
-    </resultStatus>
+    <patient>
+        <identification>
+            <Identification>
+                <id>T2396181J</id>
+                <MRNNumber>cc49389absdb48567</MRNNumber>
+                <type>NRIC</type>
+            </Identification>
+            <Identification>
+                <id>49389743748567</id>
+                <MRNNumber>49389743748567</MRNNumber>
+                <type>MRN</type>
+            </Identification>
+        </identification>
+        <name>
+            <value>San Zhang</value>
+            <title>Mr.</title>
+        </name>
+        <aliasName>
+            <value>太乙</value>
+            <title>真人</title>
+        </aliasName>
+        <contactDetails>
+            <phone>
+                <Phone>
+                    <type>cellphone</type>
+                    <countryCode>+86</countryCode>
+                    <phoneNumber>18568622334</phoneNumber>
+                </Phone>
+            </phone>
+        </contactDetails>
+        <dateOfBirth>2001-02-13</dateOfBirth>
+        <countryOfBirth>Singapore</countryOfBirth>
+        <gender>female</gender>
+        <emailAddress>zhangsan@gmail.com</emailAddress>
+        <nationality>Singapore</nationality>
+        <race>Mongoloid</race>
+        <maritalStatus>Widowed</maritalStatus>
+        <occupation>?</occupation>
+    </patient>
+    <event>
+        <recordIdentifier>?</recordIdentifier>
+        <id>?</id>
+        <movementSequenceNo>?</movementSequenceNo>
+        <eventStartDate>?</eventStartDate>
+        <eventEndDate>?</eventEndDate>
+        <cancellationNotice>?</cancellationNotice>
+        <institution>?</institution>
+        <serviceSpecialty>
+            <code>?</code>
+            <codingSchemeName>?</codingSchemeName>
+            <codingSchemeVersion>?</codingSchemeVersion>
+            <textDescription>?</textDescription>
+        </serviceSpecialty>
+        <patientType>
+            <code>?</code>
+            <codingSchemeName>?</codingSchemeName>
+            <codingSchemeVersion>?</codingSchemeVersion>
+            <textDescription>?</textDescription>
+        </patientType>
+        <eventType>
+            <code>?</code>
+            <codingSchemeName>?</codingSchemeName>
+            <codingSchemeVersion>?</codingSchemeVersion>
+            <textDescription>?</textDescription>
+        </eventType>
+        <attendingClinician>
+            <id>?</id>
+            <name>?</name>
+        </attendingClinician>
+        <admittingClinician>
+            <id>?</id>
+            <name>?</name>
+        </admittingClinician>
+        <dischargingClinician>
+            <id>?</id>
+            <name>?</name>
+        </dischargingClinician>
+        <referringClinician>
+            <id>?</id>
+            <name>?</name>
+        </referringClinician>
+        <dischargeInformation>
+            <dischargedToOrg>
+                <code>?</code>
+                <codingSchemeName>?</codingSchemeName>
+                <codingSchemeVersion>?</codingSchemeVersion>
+                <textDescription>?</textDescription>
+            </dischargedToOrg>
+            <dischargeOutcome>?</dischargeOutcome>
+            <dischargeDisposition>
+                <code>?</code>
+                <codingSchemeName>?</codingSchemeName>
+                <codingSchemeVersion>?</codingSchemeVersion>
+                <textDescription>?</textDescription>
+            </dischargeDisposition>
+        </dischargeInformation>
+        <movementType>
+            <code>?</code>
+            <codingSchemeName>?</codingSchemeName>
+            <codingSchemeVersion>?</codingSchemeVersion>
+            <textDescription>?</textDescription>
+        </movementType>
+    </event>
 </putEvent>
          	
          ]]></tem:payload>

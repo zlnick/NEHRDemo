@@ -6,7 +6,7 @@ Method Match(pRequest As EnsLib.EDI.XML.Document, Output pResponse As NEHRDemo.M
   Set tSC = $$$OK
   Set pResponse = ##Class(NEHRDemo.Messages.MockMHA.MatchResponse).%New()
     Set branch = $R(3)
-    Set branch = 2
+    Set branch = 1
     //NoNID
     if (0 = branch) {
         Set pResponse.MatchResult = "NoNID"

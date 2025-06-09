@@ -23,65 +23,30 @@
             </Identification>
         </identification>
         <name>
-            <value>?</value>
-            <title>?</title>
+            <value>San Zhang</value>
+            <title>Mr.</title>
         </name>
         <aliasName>
-            <value>?</value>
-            <title>?</title>
+            <value>太乙</value>
+            <title>真人</title>
         </aliasName>
         <contactDetails>
-            <address>
-                <!--Zero
-                or more repetitions:-->
-                <Address>
-                    <type>?</type>
-                    <streetLine1>?</streetLine1>
-                    <streetLine2>?</streetLine2>
-                    <streetLine3>?</streetLine3>
-                    <streetLine4>?</streetLine4>
-                    <city>?</city>
-                    <country>?</country>
-                    <postalCode>?</postalCode>
-                </Address>
-            </address>
             <phone>
-                <!--Zero
-                or more repetitions:-->
                 <Phone>
-                    <type>?</type>
-                    <countryCode>?</countryCode>
-                    <areaCode>?</areaCode>
-                    <phoneNumber>?</phoneNumber>
-                    <extensionNumber>?</extensionNumber>
+                    <type>cellphone</type>
+                    <countryCode>+86</countryCode>
+                    <phoneNumber>18568622334</phoneNumber>
                 </Phone>
             </phone>
         </contactDetails>
-        <dateOfBirth>?</dateOfBirth>
-        <countryOfBirth>?</countryOfBirth>
-        <gender>?</gender>
-        <emailAddress>?</emailAddress>
-        <nationality>?</nationality>
-        <race>?</race>
-        <residencyStatus>?</residencyStatus>
-        <language>?</language>
-        <maritalStatus>?</maritalStatus>
+        <dateOfBirth>2001-02-13</dateOfBirth>
+        <countryOfBirth>Singapore</countryOfBirth>
+        <gender>female</gender>
+        <emailAddress>zhangsan@gmail.com</emailAddress>
+        <nationality>Singapore</nationality>
+        <race>Mongoloid</race>
+        <maritalStatus>Widowed</maritalStatus>
         <occupation>?</occupation>
-        <VIPFlag>?</VIPFlag>
-        <VVIPFlag>?</VVIPFlag>
-        <dateOfDeath>?</dateOfDeath>
-        <deathIndicator>?</deathIndicator>
-        <religion>?</religion>
-        <nextOfKin>
-            <!--Zero
-            or more repetitions:-->
-            <NextOfKin>
-                <name>?</name>
-                <phone>?</phone>
-                <relationship>?</relationship>
-                <email>?</email>
-            </NextOfKin>
-        </nextOfKin>
     </patient>
     <!--Optional:-->
     <event>

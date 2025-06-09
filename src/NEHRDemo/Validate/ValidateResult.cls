@@ -5,9 +5,7 @@ Property MessageId As %String;
 
 Property SessionId As %String;
 
-Property ResourceType As %String;
-
-Property Issues As list Of NEHRDemo.Validate.ValidateIssue;
+Property TypeResult As list Of NEHRDemo.Validate.TypeResult;
 
 Storage Default
 {
@@ -22,10 +20,7 @@ Storage Default
 <Value>SessionId</Value>
 </Value>
 <Value name="4">
-<Value>ResourceType</Value>
-</Value>
-<Value name="5">
-<Value>Issues</Value>
+<Value>TypeResult</Value>
 </Value>
 </Data>
 <DataLocation>^NEHRDemo.Va8AEA.ValidateResultD</DataLocation>
