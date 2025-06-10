@@ -17,11 +17,6 @@
     <patient>
         <identification>
             <Identification>
-                <id>T2396181J</id>
-                <MRNNumber>cc49389absdb48567</MRNNumber>
-                <type>NRIC</type>
-            </Identification>
-            <Identification>
                 <id>49389743748567</id>
                 <MRNNumber>49389743748567</MRNNumber>
                 <type>MRN</type>
@@ -51,7 +46,7 @@
         <nationality>Singapore</nationality>
         <race>Mongoloid</race>
         <maritalStatus>Widowed</maritalStatus>
-        <occupation>?</occupation>
+        <occupation>Worker</occupation>
     </patient>
     <event>
         <recordIdentifier>?</recordIdentifier>

@@ -7,12 +7,9 @@ Method OnProcessInput(pInput As Ens.StreamContainer, Output pOutput As NEHRDemo.
     #Dim doc As EnsLib.EDI.XML.Document = ##Class(EnsLib.EDI.XML.Document).ImportFromLibraryStream(pInput.StreamGet(),.tSC)
     s doc.DocType="message:putEvent"
     s doc.DocTypeCategory="message"
-    //.%New()
-    //Set tSC = doc.ImportFromLibraryStream(pInput.StreamGet())
     Set tSC = (pInput.StreamGet()).Rewind()
     Set ^Temp = (pInput.StreamGet()).Read()
-    //Set tSC = ..SendRequestSync("NEHRDemo.Process.VDocHandlingBPL",doc,.resp)
-    Set tSC = ..SendRequestSync("Test",doc,.resp)
+    Set tSC = ..SendRequestSync("NEHRDemo.Process.VDocHandlingBPL",doc,.resp)
     Set pOutput = ##Class(NEHRDemo.Messages.AddPatientResponse).%New()
     Set pOutput.resultStatus = ##Class(NEHRDemo.Entity.ResultStatus).%New()
     Set pOutput.resultStatus.statusCode = "1111"
