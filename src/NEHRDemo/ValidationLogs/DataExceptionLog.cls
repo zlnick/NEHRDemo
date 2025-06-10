@@ -9,7 +9,36 @@ Property Content As %Stream.GlobalCharacter;
 
 Property Cause As %String;
 
-Property Details As NEHRDemo.Validate.ValidateResult;
+Property Issues As list Of NEHRDemo.Validate.ValidateIssue;
+
+/// Callback for object deletion
+ClassMethod %OnDelete(oid As %ObjectIdentity) As %Status [ Private ]
+{
+      // Delete the property object references.
+      Set tSC = $$$OK, tThis = ##class(NEHRDemo.Logs.DataExceptionLog).%Open(oid)
+      If $ISOBJECT(tThis.Issues) {
+        For i=1:1:tThis.Issues.Count()
+        {
+            Set tSC = ##class(NEHRDemo.Validate.ValidateIssue).%DeleteId(tThis.Issues.GetAt(i).%Id())
+        }
+      }
+      Quit tSC
+}
+
+/// Callback/Trigger for SQL delete
+Trigger OnDelete [ Event = DELETE ]
+{
+      // Delete the property object references. {%%ID} holds the id of the record being deleted.
+      Set tID={%%ID}
+      Set tThis = ##class(NEHRDemo.Logs.DataExceptionLog).%OpenId(tID)
+      If $ISOBJECT(tThis.Issues) {
+        For i=1:1:tThis.Issues.Count()
+        {
+            Set tSC = ##class(NEHRDemo.Validate.ValidateIssue).%DeleteId(tThis.Issues.GetAt(i).%Id())
+        }
+      }
+      Quit
+}
 
 Storage Default
 {
@@ -30,7 +59,7 @@ Storage Default
 <Value>Cause</Value>
 </Value>
 <Value name="6">
-<Value>Details</Value>
+<Value>Issues</Value>
 </Value>
 </Data>
 <DataLocation>^NEHRDemo.Logs.DataExceptio9D3D</DataLocation>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26" zv="IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2025.1 (Build 225.1U)" ts="2025-06-10 06:47:06">
+<Document name="maritalStatus.LUT">
+<lookupTable>
+<entry table="maritalStatus" key="Annulled">Annulled</entry>
+<entry table="maritalStatus" key="Divorced">Divorced</entry>
+<entry table="maritalStatus" key="Domestic partner">Domestic partner</entry>
+<entry table="maritalStatus" key="Interlocutory">Interlocutory</entry>
+<entry table="maritalStatus" key="Legally Separated">Legally Separated</entry>
+<entry table="maritalStatus" key="Married">Married</entry>
+<entry table="maritalStatus" key="Never Married">Never Married</entry>
+<entry table="maritalStatus" key="Polygamous">Polygamous</entry>
+<entry table="maritalStatus" key="Unknown">Unknown</entry>
+<entry table="maritalStatus" key="Unmarried">Unmarried</entry>
+<entry table="maritalStatus" key="Widowed">Widowed</entry>
+</lookupTable>
+</Document></Export>

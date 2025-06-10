@@ -17,6 +17,11 @@
     <patient>
         <identification>
             <Identification>
+                <id>T2396181Ja</id>
+                <MRNNumber>cc49389absdb48567</MRNNumber>
+                <type>NRIC</type>
+            </Identification>
+            <Identification>
                 <id>49389743748567</id>
                 <MRNNumber>49389743748567</MRNNumber>
                 <type>MRN</type>
@@ -39,21 +44,21 @@
                 </Phone>
             </phone>
         </contactDetails>
-        <dateOfBirth>2001-02-13</dateOfBirth>
+        <dateOfBirth>x2001-02-13z</dateOfBirth>
         <countryOfBirth>Singapore</countryOfBirth>
-        <gender>female</gender>
+        <gender>femaleX</gender>
         <emailAddress>zhangsan@gmail.com</emailAddress>
         <nationality>Singapore</nationality>
         <race>Mongoloid</race>
-        <maritalStatus>Widowed</maritalStatus>
+        <maritalStatus>WidowedX</maritalStatus>
         <occupation>Worker</occupation>
     </patient>
     <event>
-        <recordIdentifier>?</recordIdentifier>
+        <recordIdentifier></recordIdentifier>
         <id>?</id>
         <movementSequenceNo>?</movementSequenceNo>
-        <eventStartDate>?</eventStartDate>
-        <eventEndDate>?</eventEndDate>
+        <eventStartDate>2025-06-18</eventStartDate>
+        <eventEndDate>2025-06-17</eventEndDate>
         <cancellationNotice>?</cancellationNotice>
         <institution>?</institution>
         <serviceSpecialty>
@@ -69,7 +74,7 @@
             <textDescription>?</textDescription>
         </patientType>
         <eventType>
-            <code>?</code>
+            <code>WrongType</code>
             <codingSchemeName>?</codingSchemeName>
             <codingSchemeVersion>?</codingSchemeVersion>
             <textDescription>?</textDescription>

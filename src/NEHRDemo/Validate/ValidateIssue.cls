@@ -1,9 +1,11 @@
-Class NEHRDemo.Validate.ValidateIssue Extends (%Persistent, %XML.Adaptor)
+Class NEHRDemo.Validate.ValidateIssue Extends (%Persistent, %XML.Adaptor, %JSON.Adaptor)
 {
 
-Property Reason As %String;
+Property ResourceType As %String;
 
-Property Position As %String;
+Property Reason As %String(MAXLEN = 256);
+
+Property Position As %String(MAXLEN = 256);
 
 Storage Default
 {
@@ -12,9 +14,12 @@ Storage Default
 <Value>%%CLASSNAME</Value>
 </Value>
 <Value name="2">
-<Value>Reason</Value>
+<Value>ResourceType</Value>
 </Value>
 <Value name="3">
+<Value>Reason</Value>
+</Value>
+<Value name="4">
 <Value>Position</Value>
 </Value>
 </Data>

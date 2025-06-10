@@ -6,7 +6,7 @@ ClassMethod test() As %Status
     Set tSC = $$$OK
     Set str = "<putEvent><controlHeader><srcInstitution>a</srcInstitution><srcApplication>b</srcApplication><msgID>111</msgID><msgSequenceID>1</msgSequenceID><msgDateTime>11111</msgDateTime><msgType>1</msgType></controlHeader><patient><identification><Identification><id>T2396181J</id><MRNNumber>cc49389absdb48567</MRNNumber><type>NRIC</type></Identification><Identification><id>49389743748567</id><MRNNumber>49389743748567</MRNNumber><type>MRN</type></Identification></identification><name><value>San Zhang</value><title>Mr.</title></name><aliasName><value>太乙</value><title>真人</title></aliasName><contactDetails><phone><Phone><type>cellphone</type><countryCode>+86</countryCode><phoneNumber>18568622334</phoneNumber></Phone></phone></contactDetails><dateOfBirth>2001-02-13</dateOfBirth><countryOfBirth>Singapore</countryOfBirth><gender>female</gender><emailAddress>zhangsan@gmail.com</emailAddress><nationality>Singapore</nationality><race>Mongoloid</race><maritalStatus>Widowed</maritalStatus><occupation>?</occupation></patient></putEvent>"
     Set doc = ##Class(EnsLib.EDI.XML.Document).ImportFromString(str)
-    w ##Class(NEHRDemo.Utils.VDocUtils).FindByXPath(doc,"/putEvent/patient/identification","Identification[type='NRIC']/id/text()")
+    w ##Class(NEHRDemo.Utils.VDocUtils).FindByXPath(doc,"/putEvent/patient/dateOfBirth","text()")
 }
 
 ClassMethod testDoc() As %Status
@@ -41,6 +41,17 @@ ClassMethod GetNricIdFromXml(xml As %Stream.GlobalCharacter) As %String
     }
     
     return nricId
+}
+
+ClassMethod TestAddingIssue() As %Status
+{
+    #Dim log As NEHRDemo.Logs.DataExceptionLog = ##Class(NEHRDemo.Logs.DataExceptionLog).%New()
+    Set tSC = ##Class(NEHRDemo.Utils.VDocUtils).AppendValidateIssue(.log,"Patient","a","1")
+    Set tSC = ##Class(NEHRDemo.Utils.VDocUtils).AppendValidateIssue(.log,"Patient","b","2")
+    Set tSC = ##Class(NEHRDemo.Utils.VDocUtils).AppendValidateIssue(.log,"Encounter","c","3")
+    Set tSC = ##Class(NEHRDemo.Utils.VDocUtils).AppendValidateIssue(.log,"Diagnosis","d","4")
+    zw log
+    Quit tSC
 }
 
 }

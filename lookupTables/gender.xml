@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26" zv="IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2025.1 (Build 225.1U)" ts="2025-06-10 06:47:00">
+<Document name="gender.LUT">
+<lookupTable>
+<entry table="gender" key="female">Female</entry>
+<entry table="gender" key="male">Male</entry>
+<entry table="gender" key="other">Other</entry>
+<entry table="gender" key="unknown">Unknown</entry>
+</lookupTable>
+</Document></Export>
