@@ -11,10 +11,11 @@ XData BPL [ XMLNamespace = "http://www.intersystems.com/bpl" ]
 <property name='UCRResponse' type='EnsLib.EDI.XML.Document' instantiate='0' />
 <property name='SaveToTempTableResponse' type='NEHRDemo.Messages.TempTable.SaveResponse' instantiate='0' />
 <property name='tmpStream' type='%Stream.GlobalCharacter' instantiate='0' />
-<property name='ValidateResult' type='NEHRDemo.Validate.ValidateResult' instantiate='1' />
+<property name='ValidateResultLog' type='NEHRDemo.Logs.DataExceptionLog' instantiate='0' />
 <property name='Document' type='EnsLib.EDI.XML.Document' instantiate='0' />
+<property name='tSC' type='%Status' instantiate='0' />
 </context>
-<sequence xend='200' yend='650' >
+<sequence xend='200' yend='750' >
 <assign name="putRequestToContext" property="context.Document" value="request" action="set" languageOverride="" xpos='200' ypos='250' />
 <sequence name='NIDMatch' xpos='200' ypos='350' xend='200' yend='350' >
 <call name='MatchNID' target='NEHRDemo.BO.MockMHAOperation' async='0' xpos='200' ypos='250' >
@@ -74,12 +75,30 @@ XData BPL [ XMLNamespace = "http://www.intersystems.com/bpl" ]
 <default name='default' />
 </switch>
 </sequence>
-<sequence name='DataValidation' xpos='200' ypos='550' xend='200' yend='700' >
-<if name='ContainsPatient' condition='"" &apos;= request.GetSubDocumentAt("/putEvent/patient")' xpos='200' ypos='250' xend='200' yend='600' >
-<true>
-<rule name='ValidatePatient' rule='NEHRDemo.Rule.PatientValidatingRule'  ruleContext='context' xpos='335' ypos='400' >
+<sequence name='DataValidation' xpos='200' ypos='550' xend='200' yend='550' >
+<assign name="InitializeLog" property="context.ValidateResultLog" value="##Class(NEHRDemo.Logs.DataExceptionLog).%New()" action="set" languageOverride="" xpos='200' ypos='250' />
+<rule name='ValidatePatient' rule='NEHRDemo.Rule.ValidatePatientRule'  ruleContext='context' xpos='200' ypos='350' >
 </rule>
-<trace value='111' xpos='335' ypos='500' />
+<rule name='ValidateEvent' rule='NEHRDemo.Rule.ValidateEventRule'  ruleContext='context' xpos='200' ypos='450' >
+</rule>
+</sequence>
+<sequence name='SaveValidationLogs' xpos='200' ypos='650' xend='200' yend='600' >
+<if name='HasValidationIssue' condition='0 &lt; context.ValidateResultLog.Issues.Count()' xpos='200' ypos='250' xend='200' yend='500' >
+<true>
+<code name='RefreshContentStream' xpos='710' ypos='308' >
+<![CDATA[ Set context.tmpStream = ##Class(%Stream.GlobalCharacter).%New()
+ Set tSC = request.OutputToLibraryStream(context.tmpStream)]]>
+</code>
+<call name='SaveLog' target='NEHRDemo.BO.LoggingOperation' async='1' xpos='335' ypos='400' >
+<request type='NEHRDemo.Messages.AddLogRequest' >
+<assign property="callrequest.log" value="context.ValidateResultLog" action="set" languageOverride="" />
+<assign property="callrequest.log.MessageId" value="..%Process.%PrimaryRequestHeader.%Id()" action="set" languageOverride="" />
+<assign property="callrequest.log.SessionId" value="..%Process.%SessionId" action="set" languageOverride="" />
+<assign property="callrequest.log.Cause" value="&quot;InvalidData&quot;" action="set" languageOverride="" />
+<assign property="callrequest.log.Content" value="context.tmpStream" action="set" languageOverride="" />
+</request>
+<response type='NEHRDemo.Messages.AddLogResponse' />
+</call>
 </true>
 </if>
 </sequence>
