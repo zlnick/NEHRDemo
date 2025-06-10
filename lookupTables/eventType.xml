@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26" zv="IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2025.1 (Build 225.1U)" ts="2025-06-10 09:11:48">
+<Document name="eventType.LUT">
+<lookupTable>
+<entry table="eventType" key="AddDiagnosis">AddDiagnosis</entry>
+<entry table="eventType" key="AddEncounter">AddEncounter</entry>
+<entry table="eventType" key="AddPatient">AddPatient</entry>
+<entry table="eventType" key="Billing">Billing</entry>
+</lookupTable>
+</Document></Export>
