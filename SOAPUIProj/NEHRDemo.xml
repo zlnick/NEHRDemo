@@ -587,8 +587,8 @@
          	<![CDATA[
          <putEvent>
     <controlHeader>
-        <srcInstitution>a</srcInstitution>
-        <srcApplication>b</srcApplication>
+        <srcInstitution>CenterHospital</srcInstitution>
+        <srcApplication>EHR</srcApplication>
         <msgID>111</msgID>
         <msgSequenceID>1</msgSequenceID>
         <msgDateTime>11111</msgDateTime>

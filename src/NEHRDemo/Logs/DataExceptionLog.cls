@@ -5,6 +5,12 @@ Property MessageId As %String;
 
 Property SessionId As %String;
 
+Property srcInstitution As %String;
+
+Property srcApplication As %String;
+
+Property eventTypeCode As %String;
+
 Property Content As %Stream.GlobalCharacter;
 
 Property Cause As %String;
@@ -53,12 +59,21 @@ Storage Default
 <Value>SessionId</Value>
 </Value>
 <Value name="4">
-<Value>Content</Value>
+<Value>srcInstitution</Value>
 </Value>
 <Value name="5">
-<Value>Cause</Value>
+<Value>srcApplication</Value>
 </Value>
 <Value name="6">
+<Value>eventTypeCode</Value>
+</Value>
+<Value name="7">
+<Value>Content</Value>
+</Value>
+<Value name="8">
+<Value>Cause</Value>
+</Value>
+<Value name="9">
 <Value>Issues</Value>
 </Value>
 </Data>
