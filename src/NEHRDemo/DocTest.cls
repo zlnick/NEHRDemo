@@ -54,4 +54,32 @@ ClassMethod TestAddingIssue() As %Status
     Quit tSC
 }
 
+ClassMethod TestBI() As %Status
+{
+    Set tSC = $$$OK
+    Set parent1 = ##Class(Test.Parent).%New()
+    Set parent1.name = "p1"
+    Set chlid1 = ##Class(Test.Child).%New()
+    Set chlid1.childName = "c1"
+    Set chlid2 = ##Class(Test.Child).%New()
+    Set chlid2.childName = "c2"
+    Set tSC = parent1.childrens.Insert(chlid1)
+    Set tSC = parent1.childrens.Insert(chlid2)
+    Set tSC = parent1.%Save()
+    Set tSC = $$$OK
+    Set parent2 = ##Class(Test.Parent).%New()
+    Set parent2.name = "p2"
+    Set chlid3 = ##Class(Test.Child).%New()
+    Set chlid3.childName = "c3"
+    Set chlid4 = ##Class(Test.Child).%New()
+    Set chlid4.childName = "c4"
+    Set chlid5 = ##Class(Test.Child).%New()
+    Set chlid5.childName = "c5"
+    Set tSC = parent2.childrens.Insert(chlid3)
+    Set tSC = parent2.childrens.Insert(chlid4)
+    Set tSC = parent2.childrens.Insert(chlid5)
+    Set tSC = parent2.%Save()
+    Quit tSC
+}
+
 }

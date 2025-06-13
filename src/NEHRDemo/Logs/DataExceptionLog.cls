@@ -9,13 +9,39 @@ Property srcInstitution As %String;
 
 Property srcApplication As %String;
 
+Property msgID As %String;
+
+Property SN As %String;
+
 Property eventTypeCode As %String;
 
 Property Content As %Stream.GlobalCharacter;
 
 Property Cause As %String;
 
-Property Issues As list Of NEHRDemo.Validate.ValidateIssue;
+Property IsValid As %Boolean;
+
+Property TimeHappened As Ens.DataType.UTC;
+
+Relationship Issues As NEHRDemo.Validate.ValidateIssue [ Cardinality = children, Inverse = Log ];
+
+Index MessageId On MessageId;
+
+Index SessionId On SessionId;
+
+Index srcInstitution On srcInstitution [ Type = bitmap ];
+
+Index srcApplication On srcApplication [ Type = bitmap ];
+
+Index SN On SN;
+
+Index eventTypeCode On eventTypeCode [ Type = bitmap ];
+
+Index Cause On Cause [ Type = bitmap ];
+
+Index IsValid On IsValid [ Type = bitmap ];
+
+Index TimeHappened On TimeHappened;
 
 /// Callback for object deletion
 ClassMethod %OnDelete(oid As %ObjectIdentity) As %Status [ Private ]
@@ -65,16 +91,25 @@ Storage Default
 <Value>srcApplication</Value>
 </Value>
 <Value name="6">
-<Value>eventTypeCode</Value>
+<Value>msgID</Value>
 </Value>
 <Value name="7">
-<Value>Content</Value>
+<Value>SN</Value>
 </Value>
 <Value name="8">
-<Value>Cause</Value>
+<Value>eventTypeCode</Value>
 </Value>
 <Value name="9">
-<Value>Issues</Value>
+<Value>Content</Value>
+</Value>
+<Value name="10">
+<Value>Cause</Value>
+</Value>
+<Value name="11">
+<Value>IsValid</Value>
+</Value>
+<Value name="12">
+<Value>TimeHappened</Value>
 </Value>
 </Data>
 <DataLocation>^NEHRDemo.Logs.DataExceptio9D3D</DataLocation>
