@@ -26,7 +26,7 @@ Do ##Class(NEHRDemo.Utils.DataGenerator).GenAndPush([numberofevents])
 //dayCounts为希望让事件分布的天数，例如为20时，程序将修改消息和log的事件，让他们从当前时间的20+随机(10~30)天前开始分布于20天内，且会保留一小部分消息和事件的时间不变
 Do ##Class(NEHRDemo.Utils.DataGenerator).UpdateTimeline([dayCounts])
 9. 有一个名为EventLog的数据面板，其中包含4个图表，其中:
-1). EventValidation Result支持两级下钻(双击)，第一级下钻后演示的内容与InvalidDoc distribution by Institution的切分逻辑是相同的，可以演示说明统一分析模型能够让用户采用不同的纬度、时间范围、显示风格来展现数据时保障数据的一致性。
+1). EventValidation Result支持两级下钻(点击下钻按钮)，第一级下钻后演示的内容与InvalidDoc distribution by Institution的切分逻辑是相同的，可以演示说明统一分析模型能够让用户采用不同的纬度、时间范围、显示风格来展现数据时保障数据的一致性。
 2). Top 5 issue occurences支持列表（单击数据单元格），可以展示错误详情，字段基本遵循Demo 4的需求，仅缺少sector
 
 
