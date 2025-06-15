@@ -1,14 +1,594 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="https://tempuri.org">
+<con:soapui-project id="22a63228-f346-4d2d-9f18-2d91f450c228" activeEnvironment="Default" name="NEHRDemo" resourceRoot="" soapui-version="5.8.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="ca04f7a5-bc17-4913-a72c-dd6bdcc82ffb" wsaVersion="NONE" name="SOAPServicesSoap" type="wsdl" bindingName="{https://tempuri.org}SOAPServicesSoap" soapVersion="1_1" anonymous="optional" definition="http://localhost:52880/NEHR/Services/NEHRDemo.SOAP.NEHR.SOAPServices.cls?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:52880/NEHR/Services/NEHRDemo.SOAP.NEHR.SOAPServices.cls?wsdl"><con:part><con:url>http://localhost:52880/NEHR/Services/NEHRDemo.SOAP.NEHR.SOAPServices.cls?wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="https://tempuri.org" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="https://tempuri.org" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://tempuri.org">
+      <s:element name="AddPatientService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="payload" type="s0:AddPatientRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddPatientRequest">
+        <s:complexContent>
+          <s:extension base="s0:Ens_Request">
+            <s:sequence>
+              <s:element minOccurs="0" name="putEvent" type="s0:PutEvent"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Ens_Request">
+        <s:complexContent>
+          <s:extension base="s0:Ens_Messagebody"/>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Ens_Messagebody"/>
+      <s:complexType name="PutEvent">
+        <s:sequence>
+          <s:element minOccurs="0" name="controlHeader" type="s0:ControlHeader"/>
+          <s:element minOccurs="0" name="patient" type="s0:Patient"/>
+          <s:element minOccurs="0" name="event" type="s0:Event"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ControlHeader">
+        <s:sequence>
+          <s:element minOccurs="0" name="srcInstitution" type="s:string"/>
+          <s:element minOccurs="0" name="srcApplication" type="s:string"/>
+          <s:element minOccurs="0" name="msgID" type="s:string"/>
+          <s:element minOccurs="0" name="msgSequenceID" type="s:long"/>
+          <s:element minOccurs="0" name="msgDateTime" type="s:string"/>
+          <s:element minOccurs="0" name="msgType" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Patient">
+        <s:sequence>
+          <s:element minOccurs="0" name="identification" type="s0:ArrayOfIdentification"/>
+          <s:element minOccurs="0" name="name" type="s0:Name"/>
+          <s:element minOccurs="0" name="aliasName" type="s0:Name"/>
+          <s:element minOccurs="0" name="contactDetails" type="s0:ContactDetails"/>
+          <s:element minOccurs="0" name="dateOfBirth" type="s:string"/>
+          <s:element minOccurs="0" name="countryOfBirth" type="s:string"/>
+          <s:element minOccurs="0" name="gender" type="s:string"/>
+          <s:element minOccurs="0" name="emailAddress" type="s:string"/>
+          <s:element minOccurs="0" name="nationality" type="s:string"/>
+          <s:element minOccurs="0" name="race" type="s:string"/>
+          <s:element minOccurs="0" name="residencyStatus" type="s:string"/>
+          <s:element minOccurs="0" name="language" type="s:string"/>
+          <s:element minOccurs="0" name="maritalStatus" type="s:string"/>
+          <s:element minOccurs="0" name="occupation" type="s:string"/>
+          <s:element minOccurs="0" name="VIPFlag" type="s:string"/>
+          <s:element minOccurs="0" name="VVIPFlag" type="s:string"/>
+          <s:element minOccurs="0" name="dateOfDeath" type="s:string"/>
+          <s:element minOccurs="0" name="deathIndicator" type="s:string"/>
+          <s:element minOccurs="0" name="religion" type="s:string"/>
+          <s:element minOccurs="0" name="nextOfKin" type="s0:ArrayOfNextOfKin"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIdentification">
+        <s:sequence>
+          <s:element maxOccurs="unbounded" minOccurs="0" name="Identification" nillable="true" type="s0:Identification"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Identification">
+        <s:sequence>
+          <s:element minOccurs="0" name="id" type="s:string"/>
+          <s:element minOccurs="0" name="MRNNumber" type="s:string"/>
+          <s:element minOccurs="0" name="type" type="s:string"/>
+          <s:element minOccurs="0" name="patientMergeType" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Name">
+        <s:sequence>
+          <s:element minOccurs="0" name="value" type="s:string"/>
+          <s:element minOccurs="0" name="title" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ContactDetails">
+        <s:sequence>
+          <s:element minOccurs="0" name="address" type="s0:ArrayOfAddress"/>
+          <s:element minOccurs="0" name="phone" type="s0:ArrayOfPhone"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAddress">
+        <s:sequence>
+          <s:element maxOccurs="unbounded" minOccurs="0" name="Address" nillable="true" type="s0:Address"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Address">
+        <s:sequence>
+          <s:element minOccurs="0" name="type" type="s:string"/>
+          <s:element minOccurs="0" name="streetLine1" type="s:string"/>
+          <s:element minOccurs="0" name="streetLine2" type="s:string"/>
+          <s:element minOccurs="0" name="streetLine3" type="s:string"/>
+          <s:element minOccurs="0" name="streetLine4" type="s:string"/>
+          <s:element minOccurs="0" name="city" type="s:string"/>
+          <s:element minOccurs="0" name="country" type="s:string"/>
+          <s:element minOccurs="0" name="postalCode" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPhone">
+        <s:sequence>
+          <s:element maxOccurs="unbounded" minOccurs="0" name="Phone" nillable="true" type="s0:Phone"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Phone">
+        <s:sequence>
+          <s:element minOccurs="0" name="type" type="s:string"/>
+          <s:element minOccurs="0" name="countryCode" type="s:string"/>
+          <s:element minOccurs="0" name="areaCode" type="s:string"/>
+          <s:element minOccurs="0" name="phoneNumber" type="s:string"/>
+          <s:element minOccurs="0" name="extensionNumber" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNextOfKin">
+        <s:sequence>
+          <s:element maxOccurs="unbounded" minOccurs="0" name="NextOfKin" nillable="true" type="s0:NextOfKin"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NextOfKin">
+        <s:sequence>
+          <s:element minOccurs="0" name="name" type="s:string"/>
+          <s:element minOccurs="0" name="phone" type="s:string"/>
+          <s:element minOccurs="0" name="relationship" type="s:string"/>
+          <s:element minOccurs="0" name="email" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Event">
+        <s:sequence>
+          <s:element minOccurs="0" name="recordIdentifier" type="s:string"/>
+          <s:element minOccurs="0" name="id" type="s:string"/>
+          <s:element minOccurs="0" name="movementSequenceNo" type="s:string"/>
+          <s:element minOccurs="0" name="eventStartDate" type="s:string"/>
+          <s:element minOccurs="0" name="eventEndDate" type="s:string"/>
+          <s:element minOccurs="0" name="cancellationNotice" type="s:string"/>
+          <s:element minOccurs="0" name="institution" type="s:string"/>
+          <s:element minOccurs="0" name="serviceSpecialty" type="s0:ServiceSpecialty"/>
+          <s:element minOccurs="0" name="patientType" type="s0:PatientType"/>
+          <s:element minOccurs="0" name="eventType" type="s0:EventType"/>
+          <s:element minOccurs="0" name="attendingClinician" type="s0:Clinician"/>
+          <s:element minOccurs="0" name="admittingClinician" type="s0:Clinician"/>
+          <s:element minOccurs="0" name="dischargingClinician" type="s0:Clinician"/>
+          <s:element minOccurs="0" name="referringClinician" type="s0:Clinician"/>
+          <s:element minOccurs="0" name="dischargeInformation" type="s0:DischargeInformation"/>
+          <s:element minOccurs="0" name="movementType" type="s0:MovementType"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceSpecialty">
+        <s:sequence>
+          <s:element minOccurs="0" name="code" type="s:string"/>
+          <s:element minOccurs="0" name="codingSchemeName" type="s:string"/>
+          <s:element minOccurs="0" name="codingSchemeVersion" type="s:string"/>
+          <s:element minOccurs="0" name="textDescription" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PatientType">
+        <s:sequence>
+          <s:element minOccurs="0" name="code" type="s:string"/>
+          <s:element minOccurs="0" name="codingSchemeName" type="s:string"/>
+          <s:element minOccurs="0" name="codingSchemeVersion" type="s:string"/>
+          <s:element minOccurs="0" name="textDescription" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EventType">
+        <s:sequence>
+          <s:element minOccurs="0" name="code" type="s:string"/>
+          <s:element minOccurs="0" name="codingSchemeName" type="s:string"/>
+          <s:element minOccurs="0" name="codingSchemeVersion" type="s:string"/>
+          <s:element minOccurs="0" name="textDescription" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Clinician">
+        <s:sequence>
+          <s:element minOccurs="0" name="id" type="s:string"/>
+          <s:element minOccurs="0" name="name" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DischargeInformation">
+        <s:sequence>
+          <s:element minOccurs="0" name="dischargedToOrg" type="s0:DischargedToOrg"/>
+          <s:element minOccurs="0" name="dischargeOutcome" type="s:string"/>
+          <s:element minOccurs="0" name="dischargeDisposition" type="s0:DischargeDisposition"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DischargedToOrg">
+        <s:sequence>
+          <s:element minOccurs="0" name="code" type="s:string"/>
+          <s:element minOccurs="0" name="codingSchemeName" type="s:string"/>
+          <s:element minOccurs="0" name="codingSchemeVersion" type="s:string"/>
+          <s:element minOccurs="0" name="textDescription" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DischargeDisposition">
+        <s:sequence>
+          <s:element minOccurs="0" name="code" type="s:string"/>
+          <s:element minOccurs="0" name="codingSchemeName" type="s:string"/>
+          <s:element minOccurs="0" name="codingSchemeVersion" type="s:string"/>
+          <s:element minOccurs="0" name="textDescription" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MovementType">
+        <s:sequence>
+          <s:element minOccurs="0" name="code" type="s:string"/>
+          <s:element minOccurs="0" name="codingSchemeName" type="s:string"/>
+          <s:element minOccurs="0" name="codingSchemeVersion" type="s:string"/>
+          <s:element minOccurs="0" name="textDescription" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddPatientServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="AddPatientServiceResult" type="s0:AddPatientResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddPatientResponse">
+        <s:complexContent>
+          <s:extension base="s0:Ens_Response">
+            <s:sequence>
+              <s:element minOccurs="0" name="controlHeader" type="s0:ControlHeader"/>
+              <s:element minOccurs="0" name="resultStatus" type="s0:ResultStatus"/>
+              <s:element minOccurs="0" name="doc" type="s:string"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Ens_Response">
+        <s:complexContent>
+          <s:extension base="s0:Ens_Messagebody"/>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ResultStatus">
+        <s:sequence>
+          <s:element minOccurs="0" name="statusCode" type="s:string"/>
+          <s:element minOccurs="0" name="statusDescription" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HandleEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="payload" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HandleEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="HandleEventResult" type="s0:AddPatientResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="AddPatientServiceSoapIn">
+    <part name="parameters" element="s0:AddPatientService"/>
+  </message>
+  <message name="AddPatientServiceSoapOut">
+    <part name="parameters" element="s0:AddPatientServiceResponse"/>
+  </message>
+  <message name="HandleEventSoapIn">
+    <part name="parameters" element="s0:HandleEvent"/>
+  </message>
+  <message name="HandleEventSoapOut">
+    <part name="parameters" element="s0:HandleEventResponse"/>
+  </message>
+  <portType name="SOAPServicesSoap">
+    <operation name="AddPatientService">
+      <input message="s0:AddPatientServiceSoapIn"/>
+      <output message="s0:AddPatientServiceSoapOut"/>
+    </operation>
+    <operation name="HandleEvent">
+      <input message="s0:HandleEventSoapIn"/>
+      <output message="s0:HandleEventSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="SOAPServicesSoap" type="s0:SOAPServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="AddPatientService">
+      <soap:operation soapAction="https://tempuri.org/NEHRDemo.SOAP.NEHR.SOAPServices.AddPatientService" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="HandleEvent">
+      <soap:operation soapAction="https://tempuri.org/NEHRDemo.SOAP.NEHR.SOAPServices.HandleEvent" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SOAPServices">
+    <port name="SOAPServicesSoap" binding="s0:SOAPServicesSoap">
+      <soap:address location="http://localhost:52880/NEHR/Services/NEHRDemo.SOAP.NEHR.SOAPServices.cls"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:52880/NEHR/Services/NEHRDemo.SOAP.NEHR.SOAPServices.cls</con:endpoint></con:endpoints><con:operation id="8eaa554b-4fb7-4a44-882c-95c9db862ac7" isOneWay="false" action="https://tempuri.org/NEHRDemo.SOAP.NEHR.SOAPServices.AddPatientService" name="AddPatientService" bindingOperationName="AddPatientService" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ac97df03-43bd-4085-8df1-e46ea7983074" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:52880/NEHR/Services/NEHRDemo.SOAP.NEHR.SOAPServices.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="https://tempuri.org">
    <soapenv:Header/>
    <soapenv:Body>
-      <tem:HandleEvent>
-         <tem:payload><![CDATA[
-         	
+      <tem:AddPatientService>
+         </tem:AddPatientService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://tempuri.org/NEHRDemo.SOAP.NEHR.SOAPServices.AddPatientService"/><con:wsrmConfig version="1.2"/></con:call><con:call id="96d0d0c7-75d4-4c45-897a-9284410f4195" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:52880/NEHR/Services/NEHRDemo.SOAP.MockMHA.MockMHAService.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="https://tempuri.org">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:AddPatientService>
+         </tem:AddPatientService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://tempuri.org/NEHRDemo.SOAP.NEHR.SOAPServices.AddPatientService"/><con:wsrmConfig version="1.2"/></con:call><con:call id="ceabe225-9adc-4b21-b1e1-41b2fbf91744" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:52880/NEHR/Services/NEHRDemo.SOAP.NEHR.SOAPServices.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="https://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:AddPatientService>\r
+         <!--Optional:-->\r
+         <tem:payload>\r
+            <!--Optional:-->\r
+            <tem:putEvent>\r
+               <!--Optional:-->\r
+               <tem:controlHeader>\r
+                  <!--Optional:-->\r
+                  <tem:srcInstitution>?</tem:srcInstitution>\r
+                  <!--Optional:-->\r
+                  <tem:srcApplication>?</tem:srcApplication>\r
+                  <!--Optional:-->\r
+                  <tem:msgID>?</tem:msgID>\r
+                  <!--Optional:-->\r
+                  <tem:msgSequenceID>?</tem:msgSequenceID>\r
+                  <!--Optional:-->\r
+                  <tem:msgDateTime>?</tem:msgDateTime>\r
+                  <!--Optional:-->\r
+                  <tem:msgType>?</tem:msgType>\r
+               </tem:controlHeader>\r
+               <!--Optional:-->\r
+               <tem:patient>\r
+                  <!--Optional:-->\r
+                  <tem:identification>\r
+                     <!--Zero or more repetitions:-->\r
+                     <tem:Identification>\r
+                        <!--Optional:-->\r
+                        <tem:id>?</tem:id>\r
+                        <!--Optional:-->\r
+                        <tem:MRNNumber>?</tem:MRNNumber>\r
+                        <!--Optional:-->\r
+                        <tem:type>?</tem:type>\r
+                        <!--Optional:-->\r
+                        <tem:patientMergeType>?</tem:patientMergeType>\r
+                     </tem:Identification>\r
+                  </tem:identification>\r
+                  <!--Optional:-->\r
+                  <tem:name>\r
+                     <!--Optional:-->\r
+                     <tem:value>?</tem:value>\r
+                     <!--Optional:-->\r
+                     <tem:title>?</tem:title>\r
+                  </tem:name>\r
+                  <!--Optional:-->\r
+                  <tem:aliasName>\r
+                     <!--Optional:-->\r
+                     <tem:value>?</tem:value>\r
+                     <!--Optional:-->\r
+                     <tem:title>?</tem:title>\r
+                  </tem:aliasName>\r
+                  <!--Optional:-->\r
+                  <tem:contactDetails>\r
+                     <!--Optional:-->\r
+                     <tem:address>\r
+                        <!--Zero or more repetitions:-->\r
+                        <tem:Address>\r
+                           <!--Optional:-->\r
+                           <tem:type>?</tem:type>\r
+                           <!--Optional:-->\r
+                           <tem:streetLine1>?</tem:streetLine1>\r
+                           <!--Optional:-->\r
+                           <tem:streetLine2>?</tem:streetLine2>\r
+                           <!--Optional:-->\r
+                           <tem:streetLine3>?</tem:streetLine3>\r
+                           <!--Optional:-->\r
+                           <tem:streetLine4>?</tem:streetLine4>\r
+                           <!--Optional:-->\r
+                           <tem:city>?</tem:city>\r
+                           <!--Optional:-->\r
+                           <tem:country>?</tem:country>\r
+                           <!--Optional:-->\r
+                           <tem:postalCode>?</tem:postalCode>\r
+                        </tem:Address>\r
+                     </tem:address>\r
+                     <!--Optional:-->\r
+                     <tem:phone>\r
+                        <!--Zero or more repetitions:-->\r
+                        <tem:Phone>\r
+                           <!--Optional:-->\r
+                           <tem:type>?</tem:type>\r
+                           <!--Optional:-->\r
+                           <tem:countryCode>?</tem:countryCode>\r
+                           <!--Optional:-->\r
+                           <tem:areaCode>?</tem:areaCode>\r
+                           <!--Optional:-->\r
+                           <tem:phoneNumber>?</tem:phoneNumber>\r
+                           <!--Optional:-->\r
+                           <tem:extensionNumber>?</tem:extensionNumber>\r
+                        </tem:Phone>\r
+                     </tem:phone>\r
+                  </tem:contactDetails>\r
+                  <!--Optional:-->\r
+                  <tem:dateOfBirth>?</tem:dateOfBirth>\r
+                  <!--Optional:-->\r
+                  <tem:countryOfBirth>?</tem:countryOfBirth>\r
+                  <!--Optional:-->\r
+                  <tem:gender>?</tem:gender>\r
+                  <!--Optional:-->\r
+                  <tem:emailAddress>?</tem:emailAddress>\r
+                  <!--Optional:-->\r
+                  <tem:nationality>?</tem:nationality>\r
+                  <!--Optional:-->\r
+                  <tem:race>?</tem:race>\r
+                  <!--Optional:-->\r
+                  <tem:residencyStatus>?</tem:residencyStatus>\r
+                  <!--Optional:-->\r
+                  <tem:language>?</tem:language>\r
+                  <!--Optional:-->\r
+                  <tem:maritalStatus>?</tem:maritalStatus>\r
+                  <!--Optional:-->\r
+                  <tem:occupation>?</tem:occupation>\r
+                  <!--Optional:-->\r
+                  <tem:VIPFlag>?</tem:VIPFlag>\r
+                  <!--Optional:-->\r
+                  <tem:VVIPFlag>?</tem:VVIPFlag>\r
+                  <!--Optional:-->\r
+                  <tem:dateOfDeath>?</tem:dateOfDeath>\r
+                  <!--Optional:-->\r
+                  <tem:deathIndicator>?</tem:deathIndicator>\r
+                  <!--Optional:-->\r
+                  <tem:religion>?</tem:religion>\r
+                  <!--Optional:-->\r
+                  <tem:nextOfKin>\r
+                     <!--Zero or more repetitions:-->\r
+                     <tem:NextOfKin>\r
+                        <!--Optional:-->\r
+                        <tem:name>?</tem:name>\r
+                        <!--Optional:-->\r
+                        <tem:phone>?</tem:phone>\r
+                        <!--Optional:-->\r
+                        <tem:relationship>?</tem:relationship>\r
+                        <!--Optional:-->\r
+                        <tem:email>?</tem:email>\r
+                     </tem:NextOfKin>\r
+                  </tem:nextOfKin>\r
+               </tem:patient>\r
+               <!--Optional:-->\r
+               <tem:event>\r
+                  <!--Optional:-->\r
+                  <tem:recordIdentifier>?</tem:recordIdentifier>\r
+                  <!--Optional:-->\r
+                  <tem:id>?</tem:id>\r
+                  <!--Optional:-->\r
+                  <tem:movementSequenceNo>?</tem:movementSequenceNo>\r
+                  <!--Optional:-->\r
+                  <tem:eventStartDate>?</tem:eventStartDate>\r
+                  <!--Optional:-->\r
+                  <tem:eventEndDate>?</tem:eventEndDate>\r
+                  <!--Optional:-->\r
+                  <tem:cancellationNotice>?</tem:cancellationNotice>\r
+                  <!--Optional:-->\r
+                  <tem:institution>?</tem:institution>\r
+                  <!--Optional:-->\r
+                  <tem:serviceSpecialty>\r
+                     <!--Optional:-->\r
+                     <tem:code>?</tem:code>\r
+                     <!--Optional:-->\r
+                     <tem:codingSchemeName>?</tem:codingSchemeName>\r
+                     <!--Optional:-->\r
+                     <tem:codingSchemeVersion>?</tem:codingSchemeVersion>\r
+                     <!--Optional:-->\r
+                     <tem:textDescription>?</tem:textDescription>\r
+                  </tem:serviceSpecialty>\r
+                  <!--Optional:-->\r
+                  <tem:patientType>\r
+                     <!--Optional:-->\r
+                     <tem:code>?</tem:code>\r
+                     <!--Optional:-->\r
+                     <tem:codingSchemeName>?</tem:codingSchemeName>\r
+                     <!--Optional:-->\r
+                     <tem:codingSchemeVersion>?</tem:codingSchemeVersion>\r
+                     <!--Optional:-->\r
+                     <tem:textDescription>?</tem:textDescription>\r
+                  </tem:patientType>\r
+                  <!--Optional:-->\r
+                  <tem:eventType>\r
+                     <!--Optional:-->\r
+                     <tem:code>?</tem:code>\r
+                     <!--Optional:-->\r
+                     <tem:codingSchemeName>?</tem:codingSchemeName>\r
+                     <!--Optional:-->\r
+                     <tem:codingSchemeVersion>?</tem:codingSchemeVersion>\r
+                     <!--Optional:-->\r
+                     <tem:textDescription>?</tem:textDescription>\r
+                  </tem:eventType>\r
+                  <!--Optional:-->\r
+                  <tem:attendingClinician>\r
+                     <!--Optional:-->\r
+                     <tem:id>?</tem:id>\r
+                     <!--Optional:-->\r
+                     <tem:name>?</tem:name>\r
+                  </tem:attendingClinician>\r
+                  <!--Optional:-->\r
+                  <tem:admittingClinician>\r
+                     <!--Optional:-->\r
+                     <tem:id>?</tem:id>\r
+                     <!--Optional:-->\r
+                     <tem:name>?</tem:name>\r
+                  </tem:admittingClinician>\r
+                  <!--Optional:-->\r
+                  <tem:dischargingClinician>\r
+                     <!--Optional:-->\r
+                     <tem:id>?</tem:id>\r
+                     <!--Optional:-->\r
+                     <tem:name>?</tem:name>\r
+                  </tem:dischargingClinician>\r
+                  <!--Optional:-->\r
+                  <tem:referringClinician>\r
+                     <!--Optional:-->\r
+                     <tem:id>?</tem:id>\r
+                     <!--Optional:-->\r
+                     <tem:name>?</tem:name>\r
+                  </tem:referringClinician>\r
+                  <!--Optional:-->\r
+                  <tem:dischargeInformation>\r
+                     <!--Optional:-->\r
+                     <tem:dischargedToOrg>\r
+                        <!--Optional:-->\r
+                        <tem:code>?</tem:code>\r
+                        <!--Optional:-->\r
+                        <tem:codingSchemeName>?</tem:codingSchemeName>\r
+                        <!--Optional:-->\r
+                        <tem:codingSchemeVersion>?</tem:codingSchemeVersion>\r
+                        <!--Optional:-->\r
+                        <tem:textDescription>?</tem:textDescription>\r
+                     </tem:dischargedToOrg>\r
+                     <!--Optional:-->\r
+                     <tem:dischargeOutcome>?</tem:dischargeOutcome>\r
+                     <!--Optional:-->\r
+                     <tem:dischargeDisposition>\r
+                        <!--Optional:-->\r
+                        <tem:code>?</tem:code>\r
+                        <!--Optional:-->\r
+                        <tem:codingSchemeName>?</tem:codingSchemeName>\r
+                        <!--Optional:-->\r
+                        <tem:codingSchemeVersion>?</tem:codingSchemeVersion>\r
+                        <!--Optional:-->\r
+                        <tem:textDescription>?</tem:textDescription>\r
+                     </tem:dischargeDisposition>\r
+                  </tem:dischargeInformation>\r
+                  <!--Optional:-->\r
+                  <tem:movementType>\r
+                     <!--Optional:-->\r
+                     <tem:code>?</tem:code>\r
+                     <!--Optional:-->\r
+                     <tem:codingSchemeName>?</tem:codingSchemeName>\r
+                     <!--Optional:-->\r
+                     <tem:codingSchemeVersion>?</tem:codingSchemeVersion>\r
+                     <!--Optional:-->\r
+                     <tem:textDescription>?</tem:textDescription>\r
+                  </tem:movementType>\r
+               </tem:event>\r
+            </tem:putEvent>\r
+         </tem:payload>\r
+      </tem:AddPatientService>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://tempuri.org/NEHRDemo.SOAP.NEHR.SOAPServices.AddPatientService"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f253fe4c-aedd-44eb-b9d4-f98450091add" isOneWay="false" action="https://tempuri.org/NEHRDemo.SOAP.NEHR.SOAPServices.HandleEvent" name="HandleEvent" bindingOperationName="HandleEvent" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3fc0fc59-c2a6-4778-95b2-e4c4805907b0" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:52880/NEHR/Services/NEHRDemo.SOAP.NEHR.SOAPServices.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="https://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:HandleEvent>\r
+         <tem:payload>
+         	<![CDATA[
          <putEvent>
     <controlHeader>
-        <srcInstitution>CenterHospital</srcInstitution>
-        <srcApplication>EHR</srcApplication>
+        <srcInstitution>a</srcInstitution>
+        <srcApplication>b</srcApplication>
         <msgID>111</msgID>
         <msgSequenceID>1</msgSequenceID>
         <msgDateTime>11111</msgDateTime>
@@ -24,7 +604,7 @@
             <Identification>
                 <id>49389743748567</id>
                 <MRNNumber>49389743748567</MRNNumber>
-                <type>SN</type>
+                <type>MRN</type>
             </Identification>
         </identification>
         <name>
@@ -118,8 +698,8 @@
         </movementType>
     </event>
 </putEvent>
-         	
-         ]]></tem:payload>
-      </tem:HandleEvent>
-   </soapenv:Body>
-</soapenv:Envelope>
+         	]]]]>><![CDATA[
+         </tem:payload>\r
+      </tem:HandleEvent>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://tempuri.org/NEHRDemo.SOAP.NEHR.SOAPServices.HandleEvent"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
